@@ -1,9 +1,11 @@
-pub fn install(package:String){
+pub fn install(packages:Vec<String>) -> bool{
     println!("Not implemented yet!");
+    return true;
 }
 
-pub fn uninstall(package:String){
+pub fn uninstall(packages:Vec<String>) -> bool{
     println!("Not implemented yet!");
+    return true;
 }
 
 #[cfg(test)]
