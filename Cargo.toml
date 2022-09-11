@@ -13,3 +13,12 @@ peng-shop-backend-dnf = {git = "https://github.com/VortexAcherontic/peng-shop-ba
 peng-shop-backend-yum = {git = "https://github.com/VortexAcherontic/peng-shop-backend-yum", optional = true}
 peng-shop-backend-pacman = {git = "https://github.com/VortexAcherontic/peng-shop-backend-pacman", optional = true}
 peng-shop-backend-apt = {git = "https://github.com/VortexAcherontic/peng-shop-backend-apt", optional = true}
+
+[features]
+zypp = ["dep:peng-shop-backend-zypp"]
+apt = ["dep:peng-shop-backend-apt"]
+snap = ["dep:peng-shop-backend-snap"]
+dnf = ["dep:peng-shop-backend-dnf"]
+yum = ["dep:peng-shop-backend-yum"]
+pacman = ["dep:peng-shop-backend-pacman"]
+flatpak = ["dep:peng-shop-backend-flatpak"]
