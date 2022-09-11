@@ -38,7 +38,7 @@ pub fn distribution_upgrade() -> bool{
     return true;
 }
 
-fn has_binar(binary:&str) -> bool{
+fn has_binary(binary:&str) -> bool{
     return true;
 }
 
