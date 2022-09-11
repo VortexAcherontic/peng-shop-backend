@@ -1,5 +1,9 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+pub fn install(package:String){
+    println!("Not implemented yet!");
+}
+
+pub fn uninstall(package:String){
+    println!("Not implemented yet!");
 }
 
 #[cfg(test)]
@@ -8,7 +12,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        //let result = add(2, 2);
+        //assert_eq!(result, 4);
     }
 }
