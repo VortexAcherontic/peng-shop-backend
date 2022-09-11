@@ -6,10 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-peng-shop-backend-zypp = {git = "https://github.com/VortexAcherontic/peng-shop-backend-zypp"}
-peng-shop-backend-snap = {git = "https://github.com/VortexAcherontic/peng-shop-backend-snap"}
-peng-shop-backend-flatpak = {git = "https://github.com/VortexAcherontic/peng-shop-backend-flatpak"}
-peng-shop-backend-dnf = {git = "https://github.com/VortexAcherontic/peng-shop-backend-dnf"}
-peng-shop-backend-yum = {git = "https://github.com/VortexAcherontic/peng-shop-backend-yum"}
-peng-shop-backend-pacman = {git = "https://github.com/VortexAcherontic/peng-shop-backend-pacman"}
-peng-shop-backend-apt = {git = "https://github.com/VortexAcherontic/peng-shop-backend-apt"}
+peng-shop-backend-zypp = {git = "https://github.com/VortexAcherontic/peng-shop-backend-zypp", optional = true}
+peng-shop-backend-snap = {git = "https://github.com/VortexAcherontic/peng-shop-backend-snap", optional = true}
+peng-shop-backend-flatpak = {git = "https://github.com/VortexAcherontic/peng-shop-backend-flatpak", optional = true}
+peng-shop-backend-dnf = {git = "https://github.com/VortexAcherontic/peng-shop-backend-dnf", optional = true}
+peng-shop-backend-yum = {git = "https://github.com/VortexAcherontic/peng-shop-backend-yum", optional = true}
+peng-shop-backend-pacman = {git = "https://github.com/VortexAcherontic/peng-shop-backend-pacman", optional = true}
+peng-shop-backend-apt = {git = "https://github.com/VortexAcherontic/peng-shop-backend-apt", optional = true}
