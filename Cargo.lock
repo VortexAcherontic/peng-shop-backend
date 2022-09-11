@@ -5,3 +5,23 @@ version = 3
 [[package]]
 name = "peng-shop-backend"
 version = "0.1.0"
+dependencies = [
+ "peng-shop-backend-flatpak",
+ "peng-shop-backend-snap",
+ "peng-shop-backend-zypp",
+]
+
+[[package]]
+name = "peng-shop-backend-flatpak"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-flatpak#26f669b21521bb086e355ce7cb33eb2f1bf8cc30"
+
+[[package]]
+name = "peng-shop-backend-snap"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-snap#b49786383a88499d791b282003c2b0b2b4396092"
+
+[[package]]
+name = "peng-shop-backend-zypp"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-zypp#f0a544db6a1cc4463d350913dfd0771d94d20ca1"

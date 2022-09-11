@@ -6,3 +6,6 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+peng-shop-backend-zypp = {git = "https://github.com/VortexAcherontic/peng-shop-backend-zypp"}
+peng-shop-backend-snap = {git = "https://github.com/VortexAcherontic/peng-shop-backend-snap"}
+peng-shop-backend-flatpak = {git = "https://github.com/VortexAcherontic/peng-shop-backend-flatpak"}
