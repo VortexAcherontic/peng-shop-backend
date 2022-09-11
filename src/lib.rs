@@ -38,6 +38,10 @@ pub fn distribution_upgrade() -> bool{
     return true;
 }
 
+fn has_binar(binary:&str) -> bool{
+    return true;
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
