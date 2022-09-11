@@ -9,3 +9,7 @@ edition = "2021"
 peng-shop-backend-zypp = {git = "https://github.com/VortexAcherontic/peng-shop-backend-zypp"}
 peng-shop-backend-snap = {git = "https://github.com/VortexAcherontic/peng-shop-backend-snap"}
 peng-shop-backend-flatpak = {git = "https://github.com/VortexAcherontic/peng-shop-backend-flatpak"}
+peng-shop-backend-dnf = {git = "https://github.com/VortexAcherontic/peng-shop-backend-dnf"}
+peng-shop-backend-yum = {git = "https://github.com/VortexAcherontic/peng-shop-backend-yum"}
+peng-shop-backend-pacman = {git = "https://github.com/VortexAcherontic/peng-shop-backend-pacman"}
+peng-shop-backend-apt = {git = "https://github.com/VortexAcherontic/peng-shop-backend-apt"}

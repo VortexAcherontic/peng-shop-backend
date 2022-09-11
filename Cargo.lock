@@ -6,10 +6,24 @@ version = 3
 name = "peng-shop-backend"
 version = "0.1.0"
 dependencies = [
+ "peng-shop-backend-apt",
+ "peng-shop-backend-dnf",
  "peng-shop-backend-flatpak",
+ "peng-shop-backend-pacman",
  "peng-shop-backend-snap",
+ "peng-shop-backend-yum",
  "peng-shop-backend-zypp",
 ]
+
+[[package]]
+name = "peng-shop-backend-apt"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-apt#74255a381213f117e526f6a1bacda00742cfec16"
+
+[[package]]
+name = "peng-shop-backend-dnf"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-dnf#6e24d43b0fc8b6b90dd1f0d290ff12462dfa3b24"
 
 [[package]]
 name = "peng-shop-backend-flatpak"
@@ -17,9 +31,19 @@ version = "0.1.0"
 source = "git+https://github.com/VortexAcherontic/peng-shop-backend-flatpak#26f669b21521bb086e355ce7cb33eb2f1bf8cc30"
 
 [[package]]
+name = "peng-shop-backend-pacman"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-pacman#00ac696b54d76c54bc679f8b88fd015da8fc4625"
+
+[[package]]
 name = "peng-shop-backend-snap"
 version = "0.1.0"
 source = "git+https://github.com/VortexAcherontic/peng-shop-backend-snap#b49786383a88499d791b282003c2b0b2b4396092"
+
+[[package]]
+name = "peng-shop-backend-yum"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-yum#6415795d815b69af6a162c8c49bfc693ac323cf6"
 
 [[package]]
 name = "peng-shop-backend-zypp"
