@@ -1,3 +1,5 @@
+pub mod utils;
+
 pub enum Transaction{
     NotImplemented,
     Success,
@@ -45,12 +47,10 @@ pub fn distribution_upgrade() -> Transaction{
     return Transaction::NotImplemented;
 }
 
-fn has_binary(binary:&str) -> bool{
-    return true;
-}
-
 #[cfg(test)]
 mod tests {
+    use crate::utils::has_binary;
+
     use super::*;
 
     #[test]
@@ -66,5 +66,6 @@ mod tests {
         assert!(matches!(upgrade(), Transaction::NotImplemented));
         assert!(matches!(refresh(), Transaction::NotImplemented));
         assert!(matches!(distribution_upgrade(), Transaction::NotImplemented));
+        assert!(matches!(has_binary("su"), true));
     }
 }
