@@ -1,8 +1,9 @@
 pub enum Transaction{
     NotImplemented,
     Success,
-    NotFound(Vec<String>),
-    TimeOut
+    PakagesNotFound(Vec<String>),
+    TimeOut,
+    RepoAlreadyExists
 }
 
 pub fn add_repo(url:String, name:String) -> Transaction{
@@ -60,12 +61,10 @@ mod tests {
         let mut packages_uninstall:Vec<String> = Vec::new();
         packages_uninstall.push("value".to_string());
 
-        assert_eq!(install(packages_install), Transaction::NotImplemented);
-        assert_eq!(uninstall(packages_uninstall), Transaction::NotImplemented);
-        assert_eq!(upgrade(), Transaction::NotImplemented);
-        assert_eq!(refresh(), Transaction::NotImplemented);
-        assert_eq!(distribution_upgrade(), Transaction::NotImplemented);
-        //let result = add(2, 2);
-        //assert_eq!(result, 4);
+        assert!(matches!(install(packages_install), Transaction::NotImplemented));
+        assert!(matches!(uninstall(packages_uninstall), Transaction::NotImplemented));
+        assert!(matches!(upgrade(), Transaction::NotImplemented));
+        assert!(matches!(refresh(), Transaction::NotImplemented));
+        assert!(matches!(distribution_upgrade(), Transaction::NotImplemented));
     }
 }
