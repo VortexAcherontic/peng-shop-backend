@@ -1,11 +1,33 @@
 pub mod utils;
 
+#[cfg(target_feature = "appimage")]
+use peng_shop_backend_appimage;
+#[cfg(target_feature = "aur")]
+use peng_shop_backend_aur;
+#[cfg(target_feature = "zypp")]
+use peng_shop_backend_zypper;
+#[cfg(target_feature = "apt")]
+use peng_shop_backend_apt;
+#[cfg(target_feature = "snap")]
+use peng_shop_backend_snap;
+#[cfg(target_feature = "dnf")]
+use peng_shop_backend_dnf;
+#[cfg(target_feature = "yum")]
+use peng_shop_backend_yum;
+#[cfg(target_feature = "pacman")]
+use peng_shop_backend_pacman;
+#[cfg(target_feature = "flatpak")]
+use peng_shop_backend_flatpak;
+
+
+
 pub enum Transaction{
     NotImplemented,
     Success,
     PakagesNotFound(Vec<String>),
     TimeOut,
-    RepoAlreadyExists
+    RepoAlreadyExists,
+    FeatureDisabled
 }
 
 pub enum SourceHint {
@@ -22,6 +44,74 @@ pub enum SourceHint {
 }
 
 pub fn add_repo(url:&str, name:&str, source:SourceHint) -> Transaction{
+    match source {
+        SourceHint::AppImage => {
+            if cfg!(target_feature = "appimage") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Apt => {
+            if cfg!(target_feature = "apt") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Aur => {
+            if cfg!(target_feature = "aur") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Dnf => {
+            if cfg!(target_feature = "dnf") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Flatpak => {
+            if cfg!(target_feature = "flatpak") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Pacman => {
+            if cfg!(target_feature = "pacman") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Snapcraft => {
+            if cfg!(target_feature = "snap") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Yum => {
+            if cfg!(target_feature = "yum") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::Zypper => {
+            if cfg!(target_feature = "zypp") {
+
+            } else {
+                return Transaction::FeatureDisabled;
+            }
+        },
+        SourceHint::None => {
+            return Transaction::FeatureDisabled;
+        }
+    }
     return Transaction::NotImplemented;
 }
 
