@@ -25,7 +25,7 @@ pub fn find_sudo_tool() -> String {
     let headless_su_tool = ["su", "sudo"];
     let headed_su_tools = ["pkexec", "xdg-su", "kdesu", "gnome-su"];
 
-    if os_is_headless() {
+    if is_os_headless() {
         for s in headless_su_tool {
             if has_binary(s) {
                 return s.to_string();
