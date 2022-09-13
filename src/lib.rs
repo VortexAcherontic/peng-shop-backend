@@ -8,21 +8,34 @@ pub enum Transaction{
     RepoAlreadyExists
 }
 
-pub fn add_repo(url:String, name:String) -> Transaction{
+pub enum SourceHint {
+    Zypper,
+    Apt,
+    Dnf,
+    Pacman,
+    Flatpak,
+    Snapcraft,
+    AppImage,
+    Yum,
+    Aur,
+    None
+}
+
+pub fn add_repo(url:&str, name:&str, source:SourceHint) -> Transaction{
     return Transaction::NotImplemented;
 }
 
 /*
 Installs a set of packages
 */
-pub fn install(packages:Vec<String>) -> Transaction{
+pub fn install(packages:Vec<String>, source:SourceHint) -> Transaction{
     return Transaction::NotImplemented;
 }
 
 /*
 Removes a given set of packages.
 */
-pub fn uninstall(packages:Vec<String>) -> Transaction{
+pub fn uninstall(packages:Vec<String>, source:SourceHint) -> Transaction{
     return Transaction::NotImplemented;
 }
 
@@ -61,8 +74,8 @@ mod tests {
         let mut packages_uninstall:Vec<String> = Vec::new();
         packages_uninstall.push("value".to_string());
 
-        assert!(matches!(install(packages_install), Transaction::NotImplemented));
-        assert!(matches!(uninstall(packages_uninstall), Transaction::NotImplemented));
+        assert!(matches!(install(packages_install, SourceHint::None), Transaction::NotImplemented));
+        assert!(matches!(uninstall(packages_uninstall, SourceHint::None), Transaction::NotImplemented));
         assert!(matches!(upgrade(), Transaction::NotImplemented));
         assert!(matches!(refresh(), Transaction::NotImplemented));
         assert!(matches!(distribution_upgrade(), Transaction::NotImplemented));
