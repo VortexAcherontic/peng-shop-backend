@@ -3,8 +3,6 @@ name = "peng-shop-backend"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 peng-shop-backend-zypp = {git = "https://github.com/VortexAcherontic/peng-shop-backend-zypp", optional = true}
 peng-shop-backend-snap = {git = "https://github.com/VortexAcherontic/peng-shop-backend-snap", optional = true}

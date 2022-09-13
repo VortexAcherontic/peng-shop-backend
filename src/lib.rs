@@ -27,7 +27,8 @@ pub enum Transaction{
     PakagesNotFound(Vec<String>),
     TimeOut,
     RepoAlreadyExists,
-    FeatureDisabled
+    FeatureDisabled,
+    InvalidURI
 }
 
 pub enum SourceHint {
@@ -47,63 +48,63 @@ pub fn add_repo(url:&str, name:&str, source:SourceHint) -> Transaction{
     match source {
         SourceHint::AppImage => {
             if cfg!(target_feature = "appimage") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Apt => {
             if cfg!(target_feature = "apt") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Aur => {
             if cfg!(target_feature = "aur") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Dnf => {
             if cfg!(target_feature = "dnf") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Flatpak => {
             if cfg!(target_feature = "flatpak") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Pacman => {
             if cfg!(target_feature = "pacman") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Snapcraft => {
             if cfg!(target_feature = "snap") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Yum => {
             if cfg!(target_feature = "yum") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
         },
         SourceHint::Zypper => {
             if cfg!(target_feature = "zypp") {
-
+                return Transaction::NotImplemented;
             } else {
                 return Transaction::FeatureDisabled;
             }
@@ -112,7 +113,6 @@ pub fn add_repo(url:&str, name:&str, source:SourceHint) -> Transaction{
             return Transaction::FeatureDisabled;
         }
     }
-    return Transaction::NotImplemented;
 }
 
 /*
@@ -168,7 +168,20 @@ mod tests {
         assert!(matches!(uninstall(packages_uninstall, SourceHint::None), Transaction::NotImplemented));
         assert!(matches!(upgrade(), Transaction::NotImplemented));
         assert!(matches!(refresh(), Transaction::NotImplemented));
+        assert!(matches!(add_repo("https://repo.com", "TestRepo", SourceHint::None), Transaction::FeatureDisabled));
         assert!(matches!(distribution_upgrade(), Transaction::NotImplemented));
         assert!(matches!(has_binary("su"), true));
+    }
+
+    #[test]
+    #[cfg_attr(not(feature = "zypp"), ignore)]
+    fn test_zypper(){
+        let mut packages_install:Vec<String> = Vec::new();
+        packages_install.push("peng-shop".to_string());
+
+        let mut packages_uninstall:Vec<String> = Vec::new();
+        packages_uninstall.push("peng-shop".to_string());
+
+        assert!(matches!(install(packages_install, SourceHint::Zypper), Transaction::NotImplemented));
     }
 }
