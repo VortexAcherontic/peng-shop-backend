@@ -6,7 +6,9 @@ version = 3
 name = "peng-shop-backend"
 version = "0.1.0"
 dependencies = [
+ "peng-shop-backend-appimage",
  "peng-shop-backend-apt",
+ "peng-shop-backend-aur",
  "peng-shop-backend-dnf",
  "peng-shop-backend-flatpak",
  "peng-shop-backend-pacman",
@@ -16,9 +18,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "peng-shop-backend-appimage"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-appimage#fa9170a9812b17d76a55a2a8e861f3970a37c0ce"
+
+[[package]]
 name = "peng-shop-backend-apt"
 version = "0.1.0"
 source = "git+https://github.com/VortexAcherontic/peng-shop-backend-apt#74255a381213f117e526f6a1bacda00742cfec16"
+
+[[package]]
+name = "peng-shop-backend-aur"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-aur#0797545acbd4d9143d53ced3d856215086c4e293"
 
 [[package]]
 name = "peng-shop-backend-dnf"
