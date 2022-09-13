@@ -1,6 +1,7 @@
 [package]
 name = "peng-shop-backend"
 version = "0.1.0"
+authors = ["Imo Hester <vortex@z-ray.de>"]
 edition = "2021"
 
 [dependencies]
