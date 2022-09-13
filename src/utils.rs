@@ -42,7 +42,7 @@ pub fn find_sudo_tool() -> String {
     return "".to_string();
 }
 
-pub fn os_is_headless() -> bool {
+pub fn is_os_headless() -> bool {
     if is_unix() {
         let xdg_session_key = "XDG_SESSION_TYPE";
         let display_servers = ["x11", "wayland"];
