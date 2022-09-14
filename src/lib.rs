@@ -18,7 +18,8 @@ use peng_shop_backend_yum;
 use peng_shop_backend_pacman;
 #[cfg(target_feature = "flatpak")]
 use peng_shop_backend_flatpak;
-
+#[cfg(target_feature = "pkgkit")]
+use peng_shop_backend_packagekit;
 
 
 pub enum Transaction{
