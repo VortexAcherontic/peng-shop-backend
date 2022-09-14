@@ -14,6 +14,7 @@ peng-shop-backend-pacman = {git = "https://github.com/VortexAcherontic/peng-shop
 peng-shop-backend-apt = {git = "https://github.com/VortexAcherontic/peng-shop-backend-apt", optional = true}
 peng-shop-backend-aur = {git = "https://github.com/VortexAcherontic/peng-shop-backend-aur", optional = true}
 peng-shop-backend-appimage = {git = "https://github.com/VortexAcherontic/peng-shop-backend-appimage", optional = true}
+peng-shop-backend-packagekit = {git = "https://github.com/VortexAcherontic/peng-shop-backend-packagekit", optional = true}
 
 [features]
 appimage = ["peng-shop-backend-appimage"]
@@ -25,3 +26,4 @@ dnf = ["dep:peng-shop-backend-dnf"]
 yum = ["dep:peng-shop-backend-yum"]
 pacman = ["dep:peng-shop-backend-pacman"]
 flatpak = ["dep:peng-shop-backend-flatpak"]
+pkgkit = ["dep:peng-shop-backend-packagekit"]

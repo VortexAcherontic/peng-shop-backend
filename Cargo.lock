@@ -11,6 +11,7 @@ dependencies = [
  "peng-shop-backend-aur",
  "peng-shop-backend-dnf",
  "peng-shop-backend-flatpak",
+ "peng-shop-backend-packagekit",
  "peng-shop-backend-pacman",
  "peng-shop-backend-snap",
  "peng-shop-backend-yum",
@@ -41,6 +42,11 @@ source = "git+https://github.com/VortexAcherontic/peng-shop-backend-dnf#6e24d43b
 name = "peng-shop-backend-flatpak"
 version = "0.1.0"
 source = "git+https://github.com/VortexAcherontic/peng-shop-backend-flatpak#26f669b21521bb086e355ce7cb33eb2f1bf8cc30"
+
+[[package]]
+name = "peng-shop-backend-packagekit"
+version = "0.1.0"
+source = "git+https://github.com/VortexAcherontic/peng-shop-backend-packagekit#81abc64516c23e49406a3bf00873221e0ad02278"
 
 [[package]]
 name = "peng-shop-backend-pacman"

@@ -41,6 +41,7 @@ pub enum SourceHint {
     AppImage,
     Yum,
     Aur,
+    Pkgkit,
     None
 }
 
@@ -111,6 +112,13 @@ pub fn add_repo(url:&str, name:&str, source:SourceHint) -> Transaction{
         },
         SourceHint::None => {
             return Transaction::FeatureDisabled;
+        },
+        SourceHint::Pkgkit => {
+            if cfg!(target_feature = "pkgkit") {
+                return Transaction::NotImplemented;
+            } else {
+                return Transaction::FeatureDisabled;
+            }
         }
     }
 }
